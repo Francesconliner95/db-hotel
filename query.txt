@@ -1,0 +1,35 @@
+1.
+SELECT * FROM `ospiti`
+WHERE document_type = 'CI'
+
+2.
+SELECT * FROM `ospiti`
+WHERE YEAR(date_of_birth) > 1988
+
+3.
+SELECT * FROM `ospiti`
+WHERE YEAR(created_at)-YEAR(date_of_birth)>20
+
+4.
+SELECT * FROM `ospiti`
+WHERE name LIKE 'D%'
+
+5.
+SELECT SUM(price) FROM `pagamenti`
+WHERE status = 'accepted'
+
+6.
+SELECT * FROM `pagamenti`
+ORDER BY price DESC
+LIMIT 1
+
+7.
+SELECT * FROM `ospiti`
+WHERE document_type = 'Driver license' AND YEAR(date_of_birth) = 1975
+
+8.
+SELECT * FROM `paganti`
+WHERE ospite_id IS NOT NULL
+
+9.
+SELECT SUM(beds) FROM `stanze`
